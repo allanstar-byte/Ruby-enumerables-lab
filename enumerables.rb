@@ -9,18 +9,28 @@ def spicy_foods
   ]
 end
 
+# puts spicy_foods
+# -----------Tests---------------------------------------------------------------
 # given an array of spicy foods, **return an array of strings**
 # with the names of each spicy food
 def get_names(spicy_foods)
   # your code here
+  puts spicy_foods.map { |s| s[:name] }
 end
 
+get_names(spicy_foods)
+
+# -----------Tests---------------------------------------------------------------
 # given an array of spicy foods, **return an array of hashes** 
 # where the heat level of the food is greater than 5
 def spiciest_foods(spicy_foods)
   # your code here
+  pp spicy_foods.select { |f| f[:heat_level] > 5 }
 end
+spiciest_foods(spicy_foods)
 
+
+# -----------Tests---------------------------------------------------------------
 # given an array of spicy foods, **output to the terminal**
 # each spicy food in the following format: 
 # Buffalo Wings (American) | Heat Level: 🌶🌶🌶
