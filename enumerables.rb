@@ -25,7 +25,12 @@ get_names(spicy_foods)
 # where the heat level of the food is greater than 5
 def spiciest_foods(spicy_foods)
   # your code here
-  pp spicy_foods.select { |f| f[:heat_level] > 5 }
+  # puts spicy_foods.select{|key, value| key > 5}
+  spcy = spicy_foods.select{|key, value| key[:heat_level] > 5}
+  name = spcy.map{|i| i[:name]}
+  heatLevel = spcy.map{|i| i[:heat_level]}
+  puts name
+  
 end
 spiciest_foods(spicy_foods)
 
@@ -38,30 +43,28 @@ spiciest_foods(spicy_foods)
 # "hello" * 3 == "hellohellohello"
 def print_spicy_foods(spicy_foods)
   # your code here
+  spcy = spicy_foods.select{|key, value| key[:heat_level] > 5}
+  # name = spcy.map{|i| i[:name]}
+  # heatLevel = spcy.map{|i| i[:heat_level]}
+  flw = "🌶" * 3
+  # puts "#{spcy}  #{flw}"
+  for i in spcy.map {|i|
+    puts "Hii ni moto sana : #{i[:name]} #{flw}"}
+  end
 end
+print_spicy_foods(spicy_foods)
 
+# -----------Tests---------------------------------------------------------------
 # given an array of spicy foods and a string representing a cuisine, **return a single hash**  
 # for the spicy food whose cuisine matches the cuisine being passed to the method
 def get_spicy_food_by_cuisine(spicy_foods, cuisine)
   # your code here
+  for i in spicy_foods {|i|
+    puts "#{i[:name]} #{cuisine}}"
+  }
+    
+  end
 end
+get_spicy_food_by_cuisine(spicy_foods, "Sichuan")
+# -----------Tests---------------------------------------------------------------
 
-# Given an array of spicy foods, **return an array of hashes** 
-# sorted by heat level from lowest to highest
-def sort_by_heat(spicy_foods)
-  # your code here
-end
-
-# given an array of spicy foods, output to the terminal ONLY 
-# the spicy foods that have a heat level greater than 5, in the following format: 
-# Buffalo Wings (American) | Heat Level: 🌶🌶🌶
-# HINT: Try to use methods you've already written to solve this!
-def print_spiciest_foods(spicy_foods)
-  # your code here
-end
-
-# given an array of spicy foods, return an integer representing 
-# the average heat level of all the spicy foods in the array
-def average_heat_level(spicy_foods)
-  # your code here
-end
