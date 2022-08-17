@@ -66,5 +66,5 @@ def get_spicy_food_by_cuisine(spicy_foods, cuisine)
   end
 end
 get_spicy_food_by_cuisine(spicy_foods, "Sichuan")
-# -----------Tests---------------------------------------------------------------
+
 
